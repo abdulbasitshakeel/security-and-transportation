@@ -19,7 +19,7 @@ export default function ContactForm() {
     <Card className="max-w-2xl mx-auto border-2 border-slate-200">
       <CardHeader className="text-center">
         <div className="flex items-center justify-center space-x-2 mb-4">
-          <Lock className="h-6 w-6 text-amber-500" />
+          <Lock className="h-6 w-6 text-amber-500 text-gray-600"  />
           <CardTitle className="text-2xl text-slate-900">Secure Service Inquiry</CardTitle>
         </div>
         <CardDescription className="text-base">
@@ -33,7 +33,7 @@ export default function ContactForm() {
           {/* Personal Information */}
           <div className="space-y-4">
             <h3 className="text-lg font-semibold text-slate-900 flex items-center">
-              <Shield className="h-5 w-5 mr-2 text-amber-500" />
+              <Shield className="h-5 w-5 mr-2 text-amber-500 text-gray-600" />
               Personal Information
             </h3>
 
@@ -193,11 +193,11 @@ export default function ContactForm() {
           <Button
             type="submit"
             disabled={isPending || !termsAccepted}
-            className="w-full bg-amber-500 hover:bg-amber-600 text-slate-900 font-semibold py-3 text-lg"
+            className="w-full bg-gray-600 hover:bg-gray-700 text-white font-semibold py-3 text-lg"
           >
             {isPending ? (
               <div className="flex items-center">
-                <div className="animate-spin rounded-full h-4 w-4 border-b-2 border-slate-900 mr-2"></div>
+                <div className="animate-spin rounded-full h-4 w-4 border-b-2 border-white mr-2"></div>
                 Securing Your Inquiry...
               </div>
             ) : (
@@ -207,6 +207,7 @@ export default function ContactForm() {
               </div>
             )}
           </Button>
+
 
           {/* Response Messages */}
           {state && (

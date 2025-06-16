@@ -138,10 +138,11 @@ export default function HomePage() {
               <Button
                 size="lg"
                 variant="outline"
-                className="border-2 border-white text-white hover:bg-white hover:text-black px-10 py-4 text-lg font-bold transition-all hover:scale-105"
+                className="bg-transparent border-2 border-white text-white hover:bg-white hover:text-black px-10 py-4 text-lg font-bold transition-all hover:scale-105"
               >
                 View Services
               </Button>
+
             </div>
 
             <p className="text-white font-bold text-xl tracking-wide">MOVE WITH CONFIDENCE. TRAVEL PROTECTED.</p>
@@ -174,135 +175,124 @@ export default function HomePage() {
       </section>
 
       {/* Services Section */}
-      <section id="services" className="py-24 bg-slate-50">
-        <div className="container mx-auto px-4">
+       <section id="services" className="py-24 bg-white">
+        <div className="container mx-auto px-6">
           <div className="text-center mb-20">
-            <h2 className="text-4xl md:text-5xl font-bold text-slate-900 mb-6">Our Elite Services</h2>
-            <p className="text-xl text-slate-600 max-w-3xl mx-auto">
-              Comprehensive security solutions tailored for high-profile individuals, corporations, and governments
+            <div className="inline-flex items-center space-x-3 bg-black text-white px-6 py-3 rounded-full mb-8">
+              <Shield className="h-5 w-5" />
+              <span className="font-medium">Our Elite Services</span>
+            </div>
+            <h2 className="text-4xl md:text-6xl font-bold text-black mb-8">
+              Comprehensive Security
+              <br />
+              <span className="text-gray-600">Solutions</span>
+            </h2>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+              Tailored protection services for high-profile individuals, corporations, and governments worldwide
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto">
-            <Card className="group border-2 border-slate-200 hover:border-amber-400 transition-all duration-300 hover:shadow-2xl hover:-translate-y-1 bg-white">
-              <CardHeader className="p-8">
-                <div className="flex items-center space-x-4 mb-6">
-                  <div className="p-4 bg-gradient-to-br from-amber-100 to-amber-200 rounded-xl group-hover:from-amber-200 group-hover:to-amber-300 transition-all">
-                    <Users className="h-8 w-8 text-amber-700" />
+          <div className="grid md:grid-cols-2 gap-8 max-w-7xl mx-auto">
+            {[
+              {
+                icon: Users,
+                title: "VIP Security & Close Protection",
+                description:
+                  "Elite-level personal protection services for high-profile individuals, corporate executives, dignitaries, and celebrities. Our licensed close protection officers provide 24/7 safety with discretion and precision.",
+              },
+              {
+                icon: Shield,
+                title: "Armored Vehicle Transportation",
+                description:
+                  "State-of-the-art armored vehicles operated by skilled drivers with security backgrounds. Engineered for resilience and comfort, perfect for high-value assets or individuals requiring elevated protection.",
+              },
+              {
+                icon: Car,
+                title: "Executive Transportation Services",
+                description:
+                  "Seamless ground transportation with chauffeurs trained in defensive driving, route planning, and client confidentiality. Combining comfort with uncompromised security for business executives.",
+              },
+              {
+                icon: Plane,
+                title: "Private Jet Security Personnel",
+                description:
+                  "Certified security professionals onboard private jets for international flights. Our operatives handle in-flight risks and provide full-spectrum protection from departure to destination.",
+              },
+            ].map((service, index) => (
+              <Card
+                key={index}
+                className="group border-2 border-gray-200 hover:border-black transition-all duration-500 hover:shadow-2xl hover:-translate-y-2 bg-white relative overflow-hidden"
+              >
+                <div className="absolute inset-0 bg-gradient-to-br from-black/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                <CardHeader className="p-10 relative">
+                  <div className="flex items-start space-x-6 mb-8">
+                    <div className="p-4 bg-black text-white rounded-2xl group-hover:scale-110 transition-transform duration-300">
+                      <service.icon className="h-8 w-8" />
+                    </div>
+                    <div className="flex-1">
+                      <CardTitle className="text-2xl text-black mb-4 group-hover:text-gray-800 transition-colors">
+                        {service.title}
+                      </CardTitle>
+                    </div>
                   </div>
-                  <CardTitle className="text-2xl text-slate-900">VIP Security & Close Protection</CardTitle>
-                </div>
-                <CardDescription className="text-base leading-relaxed text-slate-600">
-                  Elite-level personal protection services for high-profile individuals, corporate executives,
-                  dignitaries, and celebrities. Our licensed close protection officers provide 24/7 safety, awareness,
-                  and peace of mind with discretion and precision.
-                </CardDescription>
-                <div className="pt-4">
-                  <Button variant="ghost" className="text-amber-600 hover:text-amber-700 p-0 h-auto font-semibold">
-                    Learn More <ArrowRight className="ml-2 h-4 w-4" />
+                  <CardDescription className="text-base leading-relaxed text-gray-600 mb-6">
+                    {service.description}
+                  </CardDescription>
+                  <Button
+                    variant="ghost"
+                    className="text-black hover:text-gray-700 p-0 h-auto font-bold text-lg group/btn"
+                  >
+                    Learn More
+                    <ArrowRight className="ml-3 h-5 w-5 group-hover/btn:translate-x-1 transition-transform" />
                   </Button>
-                </div>
-              </CardHeader>
-            </Card>
-
-            <Card className="group border-2 border-slate-200 hover:border-amber-400 transition-all duration-300 hover:shadow-2xl hover:-translate-y-1 bg-white">
-              <CardHeader className="p-8">
-                <div className="flex items-center space-x-4 mb-6">
-                  <div className="p-4 bg-gradient-to-br from-amber-100 to-amber-200 rounded-xl group-hover:from-amber-200 group-hover:to-amber-300 transition-all">
-                    <Shield className="h-8 w-8 text-amber-700" />
-                  </div>
-                  <CardTitle className="text-2xl text-slate-900">Armored Vehicle Transportation</CardTitle>
-                </div>
-                <CardDescription className="text-base leading-relaxed text-slate-600">
-                  State-of-the-art armored vehicles operated by skilled drivers with security backgrounds. Engineered
-                  for resilience and comfort, perfect for sensitive cargo, high-value assets, or individuals requiring
-                  elevated protection.
-                </CardDescription>
-                <div className="pt-4">
-                  <Button variant="ghost" className="text-amber-600 hover:text-amber-700 p-0 h-auto font-semibold">
-                    Learn More <ArrowRight className="ml-2 h-4 w-4" />
-                  </Button>
-                </div>
-              </CardHeader>
-            </Card>
-
-            <Card className="group border-2 border-slate-200 hover:border-amber-400 transition-all duration-300 hover:shadow-2xl hover:-translate-y-1 bg-white">
-              <CardHeader className="p-8">
-                <div className="flex items-center space-x-4 mb-6">
-                  <div className="p-4 bg-gradient-to-br from-amber-100 to-amber-200 rounded-xl group-hover:from-amber-200 group-hover:to-amber-300 transition-all">
-                    <Car className="h-8 w-8 text-amber-700" />
-                  </div>
-                  <CardTitle className="text-2xl text-slate-900">Executive Transportation Services</CardTitle>
-                </div>
-                <CardDescription className="text-base leading-relaxed text-slate-600">
-                  Seamless ground transportation with chauffeurs trained in defensive driving, route planning, and
-                  client confidentiality. Combining comfort with uncompromised security for business executives and
-                  high-profile clients.
-                </CardDescription>
-                <div className="pt-4">
-                  <Button variant="ghost" className="text-amber-600 hover:text-amber-700 p-0 h-auto font-semibold">
-                    Learn More <ArrowRight className="ml-2 h-4 w-4" />
-                  </Button>
-                </div>
-              </CardHeader>
-            </Card>
-
-            <Card className="group border-2 border-slate-200 hover:border-amber-400 transition-all duration-300 hover:shadow-2xl hover:-translate-y-1 bg-white">
-              <CardHeader className="p-8">
-                <div className="flex items-center space-x-4 mb-6">
-                  <div className="p-4 bg-gradient-to-br from-amber-100 to-amber-200 rounded-xl group-hover:from-amber-200 group-hover:to-amber-300 transition-all">
-                    <Plane className="h-8 w-8 text-amber-700" />
-                  </div>
-                  <CardTitle className="text-2xl text-slate-900">Private Jet Security Personnel</CardTitle>
-                </div>
-                <CardDescription className="text-base leading-relaxed text-slate-600">
-                  Certified security professionals onboard private jets for international and regional flights. Our
-                  operatives handle in-flight risks, manage logistics at foreign airports, and provide full-spectrum
-                  protection from departure to destination.
-                </CardDescription>
-                <div className="pt-4">
-                  <Button variant="ghost" className="text-amber-600 hover:text-amber-700 p-0 h-auto font-semibold">
-                    Learn More <ArrowRight className="ml-2 h-4 w-4" />
-                  </Button>
-                </div>
-              </CardHeader>
-            </Card>
+                </CardHeader>
+              </Card>
+            ))}
           </div>
         </div>
       </section>
 
       {/* Global Reach Section */}
-      <section id="global" className="py-24 bg-gradient-to-br from-slate-900 to-black text-white">
-        <div className="container mx-auto px-4">
-          <div className="max-w-5xl mx-auto text-center">
-            <div className="mb-12">
-              <Globe className="h-16 w-16 text-amber-400 mx-auto mb-8" />
-              <h2 className="text-4xl md:text-5xl font-bold mb-8">Global Reach – Local Precision</h2>
-              <p className="text-xl text-slate-300 mb-12 leading-relaxed">
-                We operate across five key strategic regions—
-                <span className="text-amber-400 font-semibold">Jordan, Lebanon, Egypt, Russia, and Thailand</span>
-                —ensuring rapid response and deep local knowledge.
+       <section id="global" className="py-24 bg-black text-white">
+        <div className="container mx-auto px-6">
+          <div className="max-w-6xl mx-auto text-center">
+            <div className="mb-16">
+              <div className="inline-flex items-center space-x-3 bg-white/10 backdrop-blur-sm px-6 py-3 rounded-full border border-white/20 mb-8">
+                <Globe className="h-5 w-5" />
+                <span className="font-medium">Global Operations</span>
+              </div>
+              <h2 className="text-4xl md:text-6xl font-bold mb-8">
+                Global Reach
+                <br />
+                <span className="text-gray-400">Local Precision</span>
+              </h2>
+              <p className="text-xl text-gray-300 mb-12 leading-relaxed max-w-4xl mx-auto">
+                Operating across five strategic regions with rapid response capabilities and deep local knowledge
               </p>
             </div>
 
-            <div className="grid md:grid-cols-5 gap-6 mb-12">
-              {["Jordan", "Lebanon", "Egypt", "Russia", "Thailand"].map((country) => (
+            <div className="grid md:grid-cols-5 gap-6 mb-16">
+              {["Jordan", "Lebanon", "Egypt", "Russia", "Thailand"].map((country, index) => (
                 <div
                   key={country}
-                  className="bg-slate-800/50 backdrop-blur-sm p-6 rounded-xl border border-slate-700 hover:border-amber-400 transition-all"
+                  className="group bg-white/5 backdrop-blur-sm p-8 rounded-2xl border border-white/10 hover:border-white/30 transition-all duration-300 hover:-translate-y-2"
                 >
-                  <div className="text-lg font-semibold text-amber-400 mb-2">{country}</div>
-                  <div className="text-sm text-slate-300">24/7 Operations</div>
+                  <div className="text-2xl font-bold text-white mb-3 group-hover:scale-110 transition-transform">
+                    {country}
+                  </div>
+                  <div className="text-sm text-gray-400 font-medium">24/7 Operations</div>
+                  <div className="mt-4 w-full h-1 bg-white/20 rounded-full overflow-hidden">
+                    <div className="h-full bg-white rounded-full w-full transform -translate-x-full group-hover:translate-x-0 transition-transform duration-1000"></div>
+                  </div>
                 </div>
               ))}
             </div>
 
-            <div className="bg-slate-800/30 backdrop-blur-sm p-8 rounded-2xl border border-slate-700">
-              <p className="text-slate-300 text-lg leading-relaxed">
+            <div className="bg-white/5 backdrop-blur-sm p-12 rounded-3xl border border-white/10">
+              <p className="text-gray-300 text-xl leading-relaxed">
                 With an international network of operatives and partners, we deliver the same standard of excellence
-                across every checkpoint, every mile, and every mission. Whether you're navigating business in Amman,
-                attending a summit in Moscow, or relaxing in Phuket, we provide consistent, top-tier protection wherever
-                you go.
+                across every checkpoint, every mile, and every mission. Whether you're in Amman, Moscow, or Phuket, we
+                provide consistent, top-tier protection wherever you go.
               </p>
             </div>
           </div>
@@ -310,42 +300,52 @@ export default function HomePage() {
       </section>
 
       {/* Contact Section */}
-      <section id="contact" className="py-24 bg-black text-white">
-        <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold mb-8">Travel Smart. Move Protected.</h2>
-            <p className="text-xl text-slate-300 mb-12">
-              Reach out today to learn how Cross Protection & Logistics can safeguard your journey—from the Middle East
-              to Southeast Asia and beyond.
+       <section id="contact" className="py-24 bg-gray-50">
+        <div className="container mx-auto px-6">
+          <div className="max-w-5xl mx-auto text-center mb-20">
+            <div className="inline-flex items-center space-x-3 bg-black text-white px-6 py-3 rounded-full mb-8">
+              <Phone className="h-5 w-5" />
+              <span className="font-medium">Get In Touch</span>
+            </div>
+            <h2 className="text-4xl md:text-6xl font-bold text-black mb-8">
+              Travel Smart
+              <br />
+              <span className="text-gray-600">Move Protected</span>
+            </h2>
+            <p className="text-xl text-gray-600 mb-16 leading-relaxed">
+              Reach out today to learn how Cross Protection & Logistics can safeguard your journey across the globe
             </p>
 
-            <div className="grid md:grid-cols-3 gap-8 mb-16">
-              <div className="group">
-                <div className="p-6 bg-amber-500 rounded-2xl mb-6 group-hover:bg-amber-400 transition-colors inline-block">
-                  <Phone className="h-8 w-8 text-black" />
+            <div className="grid md:grid-cols-3 gap-8 mb-20">
+              {[
+                {
+                  icon: Phone,
+                  title: "24/7 Emergency Line",
+                  value: "+1 (555) 123-4567",
+                  subtitle: "Immediate Response",
+                },
+                {
+                  icon: Mail,
+                  title: "Secure Communications",
+                  value: "secure@crossprotection.com",
+                  subtitle: "Encrypted Channels",
+                },
+                {
+                  icon: MapPin,
+                  title: "Global Operations",
+                  value: "5 Strategic Regions",
+                  subtitle: "Worldwide Coverage",
+                },
+              ].map((contact, index) => (
+                <div key={index} className="group text-center">
+                  <div className="inline-flex p-6 bg-black text-white rounded-2xl mb-6 group-hover:scale-110 transition-transform duration-300">
+                    <contact.icon className="h-8 w-8" />
+                  </div>
+                  <h3 className="text-xl font-bold text-black mb-3">{contact.title}</h3>
+                  <p className="text-gray-800 text-lg font-medium mb-2">{contact.value}</p>
+                  <p className="text-gray-600 text-sm">{contact.subtitle}</p>
                 </div>
-                <h3 className="text-xl font-semibold mb-3">24/7 Emergency Line</h3>
-                <p className="text-slate-300 text-lg">+1 (555) 123-4567</p>
-                <p className="text-amber-400 text-sm mt-2">Immediate Response</p>
-              </div>
-
-              <div className="group">
-                <div className="p-6 bg-amber-500 rounded-2xl mb-6 group-hover:bg-amber-400 transition-colors inline-block">
-                  <Mail className="h-8 w-8 text-black" />
-                </div>
-                <h3 className="text-xl font-semibold mb-3">Secure Communications</h3>
-                <p className="text-slate-300 text-lg">secure@crossprotection.com</p>
-                <p className="text-amber-400 text-sm mt-2">Encrypted Channels</p>
-              </div>
-
-              <div className="group">
-                <div className="p-6 bg-amber-500 rounded-2xl mb-6 group-hover:bg-amber-400 transition-colors inline-block">
-                  <MapPin className="h-8 w-8 text-black" />
-                </div>
-                <h3 className="text-xl font-semibold mb-3">Global Operations</h3>
-                <p className="text-slate-300 text-lg">5 Strategic Regions</p>
-                <p className="text-amber-400 text-sm mt-2">Worldwide Coverage</p>
-              </div>
+              ))}
             </div>
           </div>
 
@@ -357,24 +357,27 @@ export default function HomePage() {
       </section>
 
       {/* Footer */}
-      <footer className="bg-black text-white py-16 border-t border-gray-800">
-        <div className="container mx-auto px-4">
+      <footer className="bg-black text-white py-20">
+        <div className="container mx-auto px-6">
           <div className="flex flex-col md:flex-row justify-between items-center">
-            <div className="flex items-center space-x-4 mb-6 md:mb-0">
-              <Image
-                src="/images/mj-logo.png"
-                alt="MJ Close Security & Transportation"
-                width={60}
-                height={60}
-                className="object-contain"
-              />
+            <div className="flex items-center space-x-6 mb-8 md:mb-0">
+              <div className="relative group">
+                <Image
+                  src="/images/mj-logo.png"
+                  alt="MJ Close Security & Transportation"
+                  width={80}
+                  height={80}
+                  className="object-contain group-hover:scale-105 transition-transform"
+                />
+                <div className="absolute -inset-2 bg-white/10 rounded-xl blur-sm opacity-0 group-hover:opacity-100 transition-opacity"></div>
+              </div>
               <div>
-                <span className="font-bold text-xl">Cross Protection & Logistics</span>
-                <p className="text-gray-400 text-sm">Elite Security Solutions Worldwide</p>
+                <span className="font-bold text-2xl">Cross Protection & Logistics</span>
+                <p className="text-gray-400 text-sm font-medium tracking-wide">ELITE SECURITY SOLUTIONS WORLDWIDE</p>
               </div>
             </div>
             <div className="text-gray-400 text-sm text-center md:text-right">
-              <p className="font-medium">© {new Date().getFullYear()} Cross Protection & Logistics.</p>
+              <p className="font-medium text-white mb-2">© {new Date().getFullYear()} Cross Protection & Logistics</p>
               <p>All rights reserved. Licensed security professionals.</p>
             </div>
           </div>
