@@ -66,6 +66,7 @@ const HomePage = () => {
             </div>
         </header>
         <section className="relative text-white py-20 overflow-hidden mybgwork">
+            <div className='overlay'></div>
             <div className="absolute inset-0 opacity-5">
                 <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(255,255,255,0.1),transparent_50%)]"></div>
             </div>
@@ -76,12 +77,12 @@ const HomePage = () => {
                     animate={{ opacity: 1 }}
                     transition={{ duration: 1.2, ease: "easeOut" }}
                 >
-                    <div className="flex justify-center mb-10">
+                    {/* <div className="flex justify-center mb-10">
                         <div className="relative">
                             <Image src="/images/mj-logo.png" alt="MJ Close Security & Transportation" width={150} height={150} className="object-contain" />
                             <div className="absolute -inset-6 bg-white/10 rounded-full blur-2xl -z-10"></div>
                         </div>
-                    </div>
+                    </div> */}
                     <h2 className="text-5xl md:text-7xl font-bold mb-8 leading-tight tracking-tight mytextstyle">Global Leader in <span className="text-white underline decoration-4 underline-offset-8">Elite Security</span></h2>
                     <p className="text-xl md:text-2xl text-gray-300 mb-12 leading-relaxed max-w-4xl mx-auto font-light">Specializing in VIP protection, secure logistics, and private aviation support for individuals, corporations, and governments who demand the highest standards of safety, discretion, and efficiency.</p>
                     <div className="flex flex-wrap items-center justify-center gap-8 mb-12">
