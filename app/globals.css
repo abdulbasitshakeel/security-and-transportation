@@ -52,8 +52,9 @@ body {
 }
 @media (max-width: 420px) {
   .mybgwork {
-    background-image: inherit !important;
-    background-color: #000;
+    background-position: 0 0;
+    /* background-image: inherit !important; */
+    /* background-color: #000; */
   }
 }
 
