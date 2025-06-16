@@ -3,6 +3,9 @@ import './globals.css';
 
 export const metadata: Metadata = {
   title: 'Cross Protection & Logistics',
+  icons: {
+    icon: '/images/favicon.png', 
+  },
 };
 
 export default function RootLayout({
