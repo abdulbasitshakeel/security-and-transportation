@@ -13,7 +13,8 @@ export default function HomePage() {
         <div className="container mx-auto px-4 py-3">
           <div className="flex items-center justify-between">
             {/* Logo Section */}
-            <div className="flex items-center space-x-4">
+
+            <a href="/" className="flex items-center space-x-4 cursor-pointer">
               <div className="relative">
                 <Image
                   src="/images/mj-logo.png"
@@ -23,14 +24,14 @@ export default function HomePage() {
                   className="object-contain"
                   priority
                 />
-                {/* Subtle glow effect around logo */}
                 <div className="absolute -inset-2 bg-white/5 rounded-lg blur-sm -z-10"></div>
               </div>
               <div className="hidden sm:block">
                 <h1 className="text-2xl font-bold tracking-tight">Cross Protection & Logistics</h1>
                 <p className="text-sm text-gray-300 font-medium">Elite Security Solutions Worldwide</p>
               </div>
-            </div>
+            </a>
+
 
             {/* Navigation */}
             <nav className="hidden lg:flex items-center space-x-8">
@@ -250,7 +251,7 @@ export default function HomePage() {
             ))}
           </div>
         </div>
-      </section>
+       </section>
 
       {/* Global Reach Section */}
        <section id="global" className="py-24 bg-black text-white">
