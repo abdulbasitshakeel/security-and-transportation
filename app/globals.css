@@ -31,9 +31,9 @@ body {
 }
 
 .mybgwork {
-  background-image: url('/images/bg.jpg'); 
+  background-image: url('/images/check.png'); 
   background-size: cover;
-  background-position: center;
+  background-position: 0 -82px;
   background-repeat: no-repeat;
 }
 .overlay {
