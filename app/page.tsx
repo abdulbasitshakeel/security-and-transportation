@@ -1,29 +1,25 @@
-import { Button } from "@/components/ui/button"
-import { Card, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
-import { Shield, Car, Plane, Users, Globe, Phone, Mail, MapPin, ArrowRight } from "lucide-react"
-import Link from "next/link"
-import Image from "next/image"
-import ContactForm from "@/components/contact-form"
+"use client";
 
-export default function HomePage() {
+import { useState } from 'react';
+import { Button } from "@/components/ui/button";
+import { Card, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import { Shield, Car, Plane, Users, Globe, Phone, Mail, MapPin, ArrowRight } from "lucide-react";
+import Link from "next/link";
+import Image from "next/image";
+import ContactForm from "@/components/contact-form";
+import { motion } from "framer-motion";
+
+const HomePage = () => {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
   return (
     <div className="min-h-screen bg-slate-50">
-      {/* Header */}
       <header className="bg-black text-white sticky top-0 z-50 border-b border-gray-800 shadow-2xl">
         <div className="container mx-auto px-4 py-3">
           <div className="flex items-center justify-between">
-            {/* Logo Section */}
-
             <a href="/" className="flex items-center space-x-4 cursor-pointer">
               <div className="relative">
-                <Image
-                  src="/images/mj-logo.png"
-                  alt="MJ Close Security & Transportation"
-                  width={80}
-                  height={80}
-                  className="object-contain"
-                  priority
-                />
+                <Image src="/images/mj-logo.png" alt="MJ Close Security & Transportation" width={80} height={80} className="object-contain" priority />
                 <div className="absolute -inset-2 bg-white/5 rounded-lg blur-sm -z-10"></div>
               </div>
               <div className="hidden sm:block">
@@ -31,153 +27,132 @@ export default function HomePage() {
                 <p className="text-sm text-gray-300 font-medium">Elite Security Solutions Worldwide</p>
               </div>
             </a>
-
-
-            {/* Navigation */}
             <nav className="hidden lg:flex items-center space-x-8">
-              <Link
-                href="#services"
-                className="text-white hover:text-gray-300 transition-colors font-medium text-lg relative group"
-              >
+              <Link href="#services" className="text-white hover:text-gray-300 transition-colors font-medium text-lg relative group">
                 Services
                 <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-white transition-all group-hover:w-full"></span>
               </Link>
-              <Link
-                href="#global"
-                className="text-white hover:text-gray-300 transition-colors font-medium text-lg relative group"
-              >
+              <Link href="#global" className="text-white hover:text-gray-300 transition-colors font-medium text-lg relative group">
                 Global Reach
                 <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-white transition-all group-hover:w-full"></span>
               </Link>
-              <Link
-                href="#contact"
-                className="text-white hover:text-gray-300 transition-colors font-medium text-lg relative group"
-              >
+              <Link href="#contact" className="text-white hover:text-gray-300 transition-colors font-medium text-lg relative group">
                 Contact
                 <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-white transition-all group-hover:w-full"></span>
               </Link>
               <div className="h-8 w-px bg-gray-600 mx-4"></div>
-              <Button
-                size="lg"
-                className="bg-white text-black hover:bg-gray-200 font-bold px-6 py-2 transition-all hover:scale-105 shadow-lg"
-              >
+              <Button size="lg" className="bg-white text-black hover:bg-gray-200 font-bold px-6 py-2 transition-all hover:scale-105 shadow-lg">
                 <Phone className="h-4 w-4 mr-2" />
                 Emergency Line
               </Button>
             </nav>
-
-            {/* Mobile Menu Button */}
-            <button className="lg:hidden text-white p-2">
+            <button className="lg:hidden text-white p-2 focus:outline-none" onClick={() => setIsMenuOpen(!isMenuOpen)}>
               <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
               </svg>
             </button>
+            <div className={`lg:hidden bg-black text-white px-4 pt-2 pb-4 transition-all duration-300 ease-in-out mystylemenu ${isMenuOpen ? "max-h-[400px] opacity-100" : "max-h-0 opacity-0 overflow-hidden"}`}>
+              <Link href="#services" onClick={() => setIsMenuOpen(false)} className="block py-2 text-white hover:text-gray-300 border-b border-gray-700">Services</Link>
+              <Link href="#global" onClick={() => setIsMenuOpen(false)} className="block py-2 text-white hover:text-gray-300 border-b border-gray-700">Global Reach</Link>
+              <Link href="#contact" onClick={() => setIsMenuOpen(false)} className="block py-2 text-white hover:text-gray-300 border-b border-gray-700">Contact</Link>
+              <div className="mt-4">
+                <Button className="w-full bg-white text-black hover:bg-gray-200 font-bold px-6 py-2 transition-all hover:scale-105 shadow-lg flex items-center justify-center">
+                  <Phone className="h-4 w-4 mr-2" />
+                  Emergency Line
+                </Button>
+              </div>
+            </div>
           </div>
         </div>
       </header>
-
-      {/* Hero Section */}
-      <section className="relative bg-black text-white py-20 overflow-hidden">
-        {/* Subtle background pattern */}
+      <section className="relative text-white py-20 overflow-hidden mybgwork">
         <div className="absolute inset-0 opacity-5">
           <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(255,255,255,0.1),transparent_50%)]"></div>
         </div>
-
         <div className="container mx-auto px-4 relative">
-          <div className="max-w-5xl mx-auto text-center">
-            <div className="mb-12">
-              {/* Large logo display */}
-              <div className="flex justify-center mb-10">
-                <div className="relative">
-                  <Image
-                    src="/images/mj-logo.png"
-                    alt="MJ Close Security & Transportation"
-                    width={150}
-                    height={150}
-                    className="object-contain"
-                  />
-                  {/* Elegant glow effect */}
-                  <div className="absolute -inset-6 bg-white/10 rounded-full blur-2xl -z-10"></div>
-                </div>
-              </div>
-
-              <h2 className="text-5xl md:text-7xl font-bold mb-8 leading-tight tracking-tight">
-                Global Leader in{" "}
-                <span className="text-white underline decoration-4 underline-offset-8">Elite Security</span>
-              </h2>
-
-              <p className="text-xl md:text-2xl text-gray-300 mb-12 leading-relaxed max-w-4xl mx-auto font-light">
-                Specializing in VIP protection, secure logistics, and private aviation support for individuals,
-                corporations, and governments who demand the highest standards of safety, discretion, and efficiency.
-              </p>
-
-              {/* Key features */}
-              <div className="flex flex-wrap items-center justify-center gap-8 mb-12">
-                <div className="flex items-center space-x-3">
-                  <div className="w-3 h-3 bg-white rounded-full"></div>
-                  <span className="text-gray-300 font-medium">Elite Operatives</span>
-                </div>
-                <div className="flex items-center space-x-3">
-                  <div className="w-3 h-3 bg-white rounded-full"></div>
-                  <span className="text-gray-300 font-medium">5 Global Regions</span>
-                </div>
-                <div className="flex items-center space-x-3">
-                  <div className="w-3 h-3 bg-white rounded-full"></div>
-                  <span className="text-gray-300 font-medium">24/7 Protection</span>
-                </div>
+          <motion.div
+            className="max-w-5xl mx-auto text-center"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 1.2, ease: "easeOut" }}
+          >
+            <div className="flex justify-center mb-10">
+              <div className="relative">
+                <Image src="/images/mj-logo.png" alt="MJ Close Security & Transportation" width={150} height={150} className="object-contain" />
+                <div className="absolute -inset-6 bg-white/10 rounded-full blur-2xl -z-10"></div>
               </div>
             </div>
-
+            <h2 className="text-5xl md:text-7xl font-bold mb-8 leading-tight tracking-tight mytextstyle">
+              Global Leader in <span className="text-white underline decoration-4 underline-offset-8">Elite Security</span>
+            </h2>
+            <p className="text-xl md:text-2xl text-gray-300 mb-12 leading-relaxed max-w-4xl mx-auto font-light">
+              Specializing in VIP protection, secure logistics, and private aviation support for individuals, corporations, and governments who demand the highest standards of safety, discretion, and efficiency.
+            </p>
+            <div className="flex flex-wrap items-center justify-center gap-8 mb-12">
+              <div className="flex items-center space-x-3">
+                <div className="w-3 h-3 bg-white rounded-full"></div>
+                <span className="text-gray-300 font-medium">Elite Operatives</span>
+              </div>
+              <div className="flex items-center space-x-3">
+                <div className="w-3 h-3 bg-white rounded-full"></div>
+                <span className="text-gray-300 font-medium">5 Global Regions</span>
+              </div>
+              <div className="flex items-center space-x-3">
+                <div className="w-3 h-3 bg-white rounded-full"></div>
+                <span className="text-gray-300 font-medium">24/7 Protection</span>
+              </div>
+            </div>
             <div className="flex flex-col sm:flex-row gap-6 justify-center mb-8">
-              <Button
-                size="lg"
-                className="bg-white text-black hover:bg-gray-200 font-bold px-10 py-4 text-lg transition-all hover:scale-105 shadow-xl"
-              >
+              <Button size="lg" className="bg-white text-black hover:bg-gray-200 font-bold px-10 py-4 text-lg transition-all hover:scale-105 shadow-xl">
                 Get Protection Now
                 <ArrowRight className="ml-2 h-5 w-5" />
               </Button>
-              <Button
-                size="lg"
-                variant="outline"
-                className="bg-transparent border-2 border-white text-white hover:bg-white hover:text-black px-10 py-4 text-lg font-bold transition-all hover:scale-105"
-              >
+              <Button size="lg" variant="outline" className="bg-transparent border-2 border-white text-white hover:bg-white hover:text-black px-10 py-4 text-lg font-bold transition-all hover:scale-105">
                 View Services
               </Button>
-
             </div>
-
             <p className="text-white font-bold text-xl tracking-wide">MOVE WITH CONFIDENCE. TRAVEL PROTECTED.</p>
-          </div>
+          </motion.div>
         </div>
       </section>
-
-      {/* Trust Indicators */}
-      <section className="py-16 bg-white border-b">
+      <motion.section
+        className="py-16 bg-white border-b"
+        initial={{ opacity: 0, y: 40 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8, ease: "easeOut" }}
+        viewport={{ once: true }}
+        >
         <div className="container mx-auto px-4">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
             <div>
-              <div className="text-3xl font-bold text-slate-900 mb-2">500+</div>
-              <div className="text-slate-600">Successful Missions</div>
+                <div className="text-3xl font-bold text-slate-900 mb-2">500+</div>
+                <div className="text-slate-600">Successful Missions</div>
             </div>
             <div>
-              <div className="text-3xl font-bold text-slate-900 mb-2">24/7</div>
-              <div className="text-slate-600">Emergency Response</div>
+                <div className="text-3xl font-bold text-slate-900 mb-2">24/7</div>
+                <div className="text-slate-600">Emergency Response</div>
             </div>
             <div>
-              <div className="text-3xl font-bold text-slate-900 mb-2">5</div>
-              <div className="text-slate-600">Global Regions</div>
+                <div className="text-3xl font-bold text-slate-900 mb-2">5</div>
+                <div className="text-slate-600">Global Regions</div>
             </div>
             <div>
-              <div className="text-3xl font-bold text-slate-900 mb-2">100%</div>
-              <div className="text-slate-600">Confidentiality</div>
+                <div className="text-3xl font-bold text-slate-900 mb-2">100%</div>
+                <div className="text-slate-600">Confidentiality</div>
             </div>
-          </div>
+            </div>
         </div>
-      </section>
-
-      {/* Services Section */}
-       <section id="services" className="py-24 bg-white">
-        <div className="container mx-auto px-6">
+      </motion.section>
+      <motion.section
+        id="services"
+        className="py-24 bg-white"
+        style={{ paddingTop: "8rem" }}
+        initial={{ opacity: 0, y: 40 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8, ease: "easeOut" }}
+        viewport={{ once: true }}
+        >
+         <div className="container mx-auto px-6">
           <div className="text-center mb-20">
             <div className="inline-flex items-center space-x-3 bg-black text-white px-6 py-3 rounded-full mb-8">
               <Shield className="h-5 w-5" />
@@ -236,12 +211,12 @@ export default function HomePage() {
                       </CardTitle>
                     </div>
                   </div>
-                  <CardDescription className="text-base leading-relaxed text-gray-600 mb-6">
+                  <CardDescription className="text-base leading-relaxed text-gray-600 mb-6 textstylenew">
                     {service.description}
                   </CardDescription>
                   <Button
                     variant="ghost"
-                    className="text-black hover:text-gray-700 p-0 h-auto font-bold text-lg group/btn"
+                    className="text-black hover:text-gray-700 p-0 h-auto font-bold text-lg group/btn newstyletextbutton"
                   >
                     Learn More
                     <ArrowRight className="ml-3 h-5 w-5 group-hover/btn:translate-x-1 transition-transform" />
@@ -251,10 +226,16 @@ export default function HomePage() {
             ))}
           </div>
         </div>
-       </section>
-
-      {/* Global Reach Section */}
-       <section id="global" className="py-24 bg-black text-white">
+       </motion.section>
+       <motion.section
+        id="global"
+        className="py-24 bg-black text-white"
+        style={{ paddingTop: "8rem" }}
+        initial={{ opacity: 0, y: 40 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8, ease: "easeOut" }}
+        viewport={{ once: true }}
+        >
         <div className="container mx-auto px-6">
           <div className="max-w-6xl mx-auto text-center">
             <div className="mb-16">
@@ -298,10 +279,16 @@ export default function HomePage() {
             </div>
           </div>
         </div>
-      </section>
-
-      {/* Contact Section */}
-       <section id="contact" className="py-24 bg-gray-50">
+        </motion.section>
+        <motion.section
+        id="contact"
+        className="py-24 bg-gray-50"
+        style={{ paddingTop: "8rem" }}
+        initial={{ opacity: 0, y: 40 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8, ease: "easeOut" }}
+        viewport={{ once: true }}
+        >
         <div className="container mx-auto px-6">
           <div className="max-w-5xl mx-auto text-center mb-20">
             <div className="inline-flex items-center space-x-3 bg-black text-white px-6 py-3 rounded-full mb-8">
@@ -355,35 +342,35 @@ export default function HomePage() {
             <ContactForm />
           </div>
         </div>
-      </section>
-
-      {/* Footer */}
-      <footer className="bg-black text-white py-20">
-        <div className="container mx-auto px-6">
-          <div className="flex flex-col md:flex-row justify-between items-center">
-            <div className="flex items-center space-x-6 mb-8 md:mb-0">
-              <div className="relative group">
-                <Image
-                  src="/images/mj-logo.png"
-                  alt="MJ Close Security & Transportation"
-                  width={80}
-                  height={80}
-                  className="object-contain group-hover:scale-105 transition-transform"
-                />
-                <div className="absolute -inset-2 bg-white/10 rounded-xl blur-sm opacity-0 group-hover:opacity-100 transition-opacity"></div>
-              </div>
-              <div>
-                <span className="font-bold text-2xl">Cross Protection & Logistics</span>
-                <p className="text-gray-400 text-sm font-medium tracking-wide">ELITE SECURITY SOLUTIONS WORLDWIDE</p>
-              </div>
+        </motion.section>
+        <footer className="bg-black text-white py-20">
+            <div className="container mx-auto px-6">
+            <div className="flex flex-col md:flex-row justify-between items-center">
+                <div className="flex items-center space-x-6 mb-8 md:mb-0">
+                <div className="relative group">
+                    <Image
+                    src="/images/mj-logo.png"
+                    alt="MJ Close Security & Transportation"
+                    width={80}
+                    height={80}
+                    className="object-contain group-hover:scale-105 transition-transform"
+                    />
+                    <div className="absolute -inset-2 bg-white/10 rounded-xl blur-sm opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                </div>
+                <div>
+                    <span className="font-bold text-2xl">Cross Protection & Logistics</span>
+                    <p className="text-gray-400 text-sm font-medium tracking-wide">ELITE SECURITY SOLUTIONS WORLDWIDE</p>
+                </div>
+                </div>
+                <div className="text-gray-400 text-sm text-center md:text-right">
+                <p className="font-medium text-white mb-2">© {new Date().getFullYear()} Cross Protection & Logistics</p>
+                <p>All rights reserved. Licensed security professionals.</p>
+                </div>
             </div>
-            <div className="text-gray-400 text-sm text-center md:text-right">
-              <p className="font-medium text-white mb-2">© {new Date().getFullYear()} Cross Protection & Logistics</p>
-              <p>All rights reserved. Licensed security professionals.</p>
             </div>
-          </div>
-        </div>
-      </footer>
+        </footer>
     </div>
   )
 }
+
+export default HomePage;
