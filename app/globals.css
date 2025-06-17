@@ -6,10 +6,10 @@
 html {
   scroll-behavior: smooth;
 }
-
 body {
   /* font-family: Arial, Helvetica, sans-serif; */
     font-family: "Poppins", sans-serif;
+
 }
 .mytextstyle{
   font-family: Arial, Helvetica, sans-serif !important;
@@ -43,6 +43,12 @@ body {
     position: absolute;
     left: 0;
     right: 0;
+}
+.newbg {
+  background-color: white;
+}
+.mytoppad{
+  margin-top: 60px;
 }
 
 @media (max-width: 1023px) {

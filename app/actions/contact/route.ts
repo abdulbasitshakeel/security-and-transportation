@@ -1,5 +1,5 @@
-import { NextResponse } from 'next/server'
 import nodemailer from 'nodemailer'
+import { NextResponse } from 'next/server'
 
 export async function POST(req: Request) {
   const body = await req.json()
@@ -10,7 +10,7 @@ export async function POST(req: Request) {
     secure: true,
     auth: {
       user: "mozeff@mmcloseprotection.com",
-      pass: "MRGAQ*+#F*HHvq3",
+      pass: "4UkhMp.pLa@-6_fDE@zQu@XZ",
     },
   })
 
