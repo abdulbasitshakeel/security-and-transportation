@@ -12,6 +12,11 @@ import { Shield, Lock, AlertTriangle } from "lucide-react"
 export default function ContactForm() {
   const [loading, setLoading] = useState(false)
 
+    const [message, setMessage] = useState<{ text: string; type: "success" | "error" | null }>({
+        text: "",
+        type: null,
+    })
+
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
     setLoading(true)
@@ -37,16 +42,19 @@ export default function ContactForm() {
     })
 
     if (res.ok) {
-      alert("Your inquiry has been sent successfully.")
+      setMessage({ text: "Your inquiry has been sent successfully.", type: "success" })
       form.reset()
     } else {
-      alert("Failed to send your inquiry. Try again.")
+      setMessage({ text: "Failed to send your inquiry. Try again.", type: "error" })
     }
 
     setLoading(false)
+
+    setTimeout(() => setMessage({ text: "", type: null }), 5000)
   }
 
   return (
+    <>
     <Card className="max-w-2xl mx-auto border-2 border-slate-200">
       <CardHeader className="text-center">
         <div className="flex items-center justify-center space-x-2 mb-4">
@@ -156,5 +164,15 @@ export default function ContactForm() {
         </form>
       </CardContent>
     </Card>
+    {message.text && (
+        <div
+            className={`fixed bottom-6 left-1/2 transform -translate-x-1/2 px-4 py-2 rounded-md shadow-md text-white text-sm ${
+            message.type === "success" ? "bg-green-600" : "bg-red-600"
+            }`}
+        >
+            {message.text}
+        </div>
+    )}
+    </>
   )
 }
