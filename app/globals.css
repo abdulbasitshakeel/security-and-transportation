@@ -47,7 +47,7 @@ body {
 
 @media (max-width: 1023px) {
  .textstylenew {
-    height: 190px;
+    height: 145px;
 }
 }
 
@@ -67,7 +67,12 @@ body {
   }
 
   .textstylenew {
-    height: 210px;
+    height: 155px;
+}
+}
+@media (max-width: 322px) {
+  .textstylenew {
+    height: 205px;
 }
 }
 
