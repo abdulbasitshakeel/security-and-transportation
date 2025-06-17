@@ -33,7 +33,7 @@ body {
 .mybgwork {
   background-image: url('/images/check.png'); 
   background-size: cover;
-  background-position: 0 -82px;
+  background-position: 0 0px;
   background-repeat: no-repeat;
 }
 .overlay {
@@ -45,9 +45,18 @@ body {
     right: 0;
 }
 
+@media (max-width: 1023px) {
+ .textstylenew {
+    height: 190px;
+}
+}
+
 @media (max-width: 600px) {
   .mybgwork {
     background-position: -372px 0;
+}
+ .textstylenew {
+    height: 145px;
 }
 }
 @media (max-width: 420px) {
@@ -56,6 +65,10 @@ body {
     /* background-image: inherit !important; */
     /* background-color: #000; */
   }
+
+  .textstylenew {
+    height: 210px;
+}
 }
 
 

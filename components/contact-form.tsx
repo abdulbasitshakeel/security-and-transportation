@@ -171,7 +171,7 @@ export default function ContactForm() {
                     />
                     <div className="text-sm">
                     <Label htmlFor="termsAccepted" className="font-medium cursor-pointer">
-                        I acknowledge and agree to the following: *
+                        I acknowledge and agree to the following: 
                     </Label>
                     <ul className="mt-2 text-slate-600 space-y-1">
                         <li>• All information provided will be handled with strict confidentiality</li>
