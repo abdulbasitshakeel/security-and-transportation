@@ -30,7 +30,7 @@ export default function ContactForm() {
       termsAccepted: form.termsAccepted.checked,
     }
 
-    const res = await fetch("/actions/contact", {
+    const res = await fetch("https://mozeffweb3.com/mail/mailer.php", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(data),
