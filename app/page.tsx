@@ -84,7 +84,7 @@ const HomePage = () => {
                 </div>
             </div>
         </header>
-        <section className="relative text-white py-20 overflow-hidden mybgwork">
+        <section className="relative text-white py-20 overflow-hidden mybgwork" style={{ paddingTop: '7rem' }}>
             <div className='overlay'></div>
             <div className="absolute inset-0 opacity-5">
                 <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(255,255,255,0.1),transparent_50%)]"></div>
