@@ -9,15 +9,12 @@ import Image from "next/image";
 import ContactForm from "@/components/contact-form";
 import { motion } from "framer-motion";
 import { FaWhatsapp } from "react-icons/fa"
-import CustomCursor from "@/components/CustomCursor";
 
 const HomePage = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   return (
     <>
-     <CustomCursor />
-      <div className="cursor-none">
         <div className="min-h-screen bg-slate-50">
             <header className="bg-black text-white sticky top-0 z-50 border-b border-gray-800 shadow-2xl">
                 <div className="container mx-auto px-4 py-3">
@@ -46,19 +43,19 @@ const HomePage = () => {
                                 <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-white transition-all group-hover:w-full"></span>
                             </Link>
                             <div className="h-8 w-px bg-gray-600 mx-4"></div>
-                          <a
+                            <a
                             href="https://wa.me/+447551885885" 
                             target="_blank"
                             rel="noopener noreferrer"
-                          >
-                            <Button
-                              size="lg"
-                              className="w-full bg-white text-black text-md hover:bg-gray-200 font-bold px-6 py-2 transition-all hover:scale-105 shadow-lg flex items-center justify-center"
                             >
-                              <FaWhatsapp className="h-4 w-4" />
-                              WhatsApp
+                            <Button
+                                size="lg"
+                                className="w-full bg-white text-black text-md hover:bg-gray-200 font-bold px-6 py-2 transition-all hover:scale-105 shadow-lg flex items-center justify-center"
+                            >
+                                <FaWhatsapp className="h-4 w-4" />
+                                WhatsApp
                             </Button>
-                          </a>
+                            </a>
                         </nav>
                         <button className="lg:hidden text-white p-2 focus:outline-none" onClick={() => setIsMenuOpen(!isMenuOpen)}>
                             <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -70,19 +67,19 @@ const HomePage = () => {
                             <Link href="#global" onClick={() => setIsMenuOpen(false)} className="block py-2 text-white hover:text-gray-300 border-b border-gray-700">Global Reach</Link>
                             <Link href="#contact" onClick={() => setIsMenuOpen(false)} className="block py-2 text-white hover:text-gray-300 border-b border-gray-700">Contact</Link>
                             <div className="mt-4">
-                              <a
+                                <a
                                 href="https://wa.me/+447551885885" 
                                 target="_blank"
                                 rel="noopener noreferrer"
-                              >
-                                <Button
-                                  size="lg"
-                                  className="w-full bg-white text-black text-md hover:bg-gray-200 font-bold px-6 py-2 transition-all hover:scale-105 shadow-lg flex items-center justify-center"
                                 >
-                                  <FaWhatsapp className="h-4 w-4" />
-                                  WhatsApp
+                                <Button
+                                    size="lg"
+                                    className="w-full bg-white text-black text-md hover:bg-gray-200 font-bold px-6 py-2 transition-all hover:scale-105 shadow-lg flex items-center justify-center"
+                                >
+                                    <FaWhatsapp className="h-4 w-4" />
+                                    WhatsApp
                                 </Button>
-                              </a>
+                                </a>
                             </div>
                         </div>
                     </div>
@@ -124,13 +121,13 @@ const HomePage = () => {
                         </div>
                         <div className="flex flex-col sm:flex-row gap-6 justify-center mb-8">
                             <a href="#contact-form">
-                              <Button
+                                <Button
                                 size="lg"
                                 className="bg-white text-black hover:bg-gray-200 font-bold px-10 py-4 text-lg transition-all hover:scale-105 shadow-xl"
-                              >
+                                >
                                 Get Protection Now
                                 <ArrowRight className="ml-2 h-5 w-5" />
-                              </Button>
+                                </Button>
                             </a>
                             <a href="#services">
                             <Button size="lg" variant="outline" className="bg-transparent border-2 border-white text-white hover:bg-white hover:text-black px-10 py-4 text-lg font-bold transition-all hover:scale-105">
@@ -245,15 +242,15 @@ const HomePage = () => {
                                     </div>
                                 </div>
                                 <CardDescription className="text-sm sm:text-base leading-relaxed text-gray-600 mb-6 textstylenew">
-                                  {service.description}
+                                    {service.description}
                                 </CardDescription>
 
                                 <Button
-                                  variant="ghost"
-                                  className="text-black hover:text-gray-700 p-0 h-auto font-bold text-base sm:text-lg group/btn newstyletextbutton"
+                                    variant="ghost"
+                                    className="text-black hover:text-gray-700 p-0 h-auto font-bold text-base sm:text-lg group/btn newstyletextbutton"
                                 >
-                                  Learn More
-                                  <ArrowRight className="ml-2 sm:ml-3 h-4 w-4 sm:h-5 sm:w-5 group-hover/btn:translate-x-1 transition-transform" />
+                                    Learn More
+                                    <ArrowRight className="ml-2 sm:ml-3 h-4 w-4 sm:h-5 sm:w-5 group-hover/btn:translate-x-1 transition-transform" />
                                 </Button>
                             </CardHeader>
                         </motion.div>
@@ -406,7 +403,6 @@ const HomePage = () => {
                 </div>
             </footer>
         </div>
-      </div>
     </>
   )
 }
