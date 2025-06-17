@@ -8,15 +8,7 @@ html {
 }
 
 body {
-  font-family: "Poppins", sans-serif;
-  cursor: none;
-}
-
-a, button {
-  cursor: none !important;
-}
-input, select, textarea, option, label, button {
-  cursor: none !important;
+    font-family: "Poppins", sans-serif;
 }
 
 .mytextstyle{
@@ -38,6 +30,10 @@ input, select, textarea, option, label, button {
     left: 0;
 }
 
+.newbg{
+  background-color: white;
+}
+
 .mybgwork {
   background-image: url('/images/check.jpg'); 
   background-size: cover;
@@ -52,9 +48,7 @@ input, select, textarea, option, label, button {
     left: 0;
     right: 0;
 }
-.newbg{
-  background-color: #fff;
-}
+
 @media (max-width: 1023px) {
  .textstylenew {
     height: 145px;
