@@ -52,7 +52,9 @@ input, select, textarea, option, label, button {
     left: 0;
     right: 0;
 }
-
+.newbg{
+  background-color: #fff;
+}
 @media (max-width: 1023px) {
  .textstylenew {
     height: 145px;
