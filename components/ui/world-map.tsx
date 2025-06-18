@@ -99,8 +99,8 @@ export function WorldMap({
                   : projectPoint(dot.end.lat, dot.end.lng);
               return (
                 <g key={`${type}-${i}`}>
-                  <circle cx={point.x} cy={point.y} r="2" fill={lineColor} />
-                  <circle cx={point.x} cy={point.y} r="2" fill={lineColor} opacity="0.5">
+                  <circle cx={point.x} cy={point.y} r="2" fill='#000' />
+                  <circle cx={point.x} cy={point.y} r="2" fill='#000' opacity="0.8">
                     <animate
                       attributeName="r"
                       from="2"

@@ -29,7 +29,9 @@ body {
     width: 100%;
     left: 0;
 }
-
+.mytoppad {
+    margin-top: 45px;
+}
 .newbg{
   background-color: white;
 }
