@@ -306,12 +306,26 @@ const HomePage = () => {
                         <div className="dark:bg-black w-full">
                             <WorldMap
                                 dots={[
-                                { start: { lat: 64.2008, lng: -149.4937 }, end: { lat: 34.0522, lng: -118.2437 } },
-                                { start: { lat: 64.2008, lng: -149.4937 }, end: { lat: -15.7975, lng: -47.8919 } },
-                                { start: { lat: -15.7975, lng: -47.8919 }, end: { lat: 38.7223, lng: -9.1393 } },
-                                { start: { lat: 51.5074, lng: -0.1278 }, end: { lat: 28.6139, lng: 77.209 } },
-                                { start: { lat: 28.6139, lng: 77.209 }, end: { lat: 43.1332, lng: 131.9113 } },
-                                { start: { lat: 28.6139, lng: 77.209 }, end: { lat: -1.2921, lng: 36.8219 } },
+                                    {
+                                        start: { lat: 31.9454, lng: 35.9284 }, // Jordan (Amman)
+                                        end: { lat: 33.8547, lng: 35.8623 },   // Lebanon (Beirut)
+                                    },
+                                    {
+                                        start: { lat: 33.8547, lng: 35.8623 }, // Lebanon (Beirut)
+                                        end: { lat: 26.8206, lng: 30.8025 },   // Egypt (Cairo, general)
+                                    },
+                                    {
+                                        start: { lat: 26.8206, lng: 30.8025 }, // Egypt
+                                        end: { lat: 55.7558, lng: 37.6173 },   // Russia (Moscow)
+                                    },
+                                    {
+                                        start: { lat: 55.7558, lng: 37.6173 }, // Russia
+                                        end: { lat: 13.7367, lng: 100.5232 },  // Thailand (Bangkok)
+                                    },
+                                    {
+                                        start: { lat: 31.9454, lng: 35.9284 }, // Jordan
+                                        end: { lat: 13.7367, lng: 100.5232 },  // Thailand
+                                    },
                                 ]}
                             />
                         </div>
