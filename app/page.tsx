@@ -9,7 +9,7 @@ import Image from "next/image";
 import ContactForm from "@/components/contact-form";
 import { motion } from "framer-motion";
 import { FaWhatsapp } from "react-icons/fa"
-import { WorldMap } from "@/components/ui/world-map";
+import BasicMap from "@/components/ui/BasicMap";
 
 const HomePage = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -281,7 +281,9 @@ const HomePage = () => {
                                 Operating across five strategic regions with rapid response capabilities and deep local knowledge
                             </p>
                         </motion.div>
-
+                        <div className="dark:bg-black w-full myheightste mybottompad">
+                            <BasicMap />
+                        </div>
                         <motion.div className="grid md:grid-cols-5 gap-6 mb-16"
                         initial={{ opacity: 0, y: 40 }}
                         whileInView={{ opacity: 1, y: 0 }}
@@ -303,33 +305,7 @@ const HomePage = () => {
                                 </div>
                             ))}
                         </motion.div>
-                        <div className="dark:bg-black w-full">
-                            <WorldMap
-                                dots={[
-                                    {
-                                        start: { lat: 31.9454, lng: 35.9284 }, // Jordan (Amman)
-                                        end: { lat: 33.8547, lng: 35.8623 },   // Lebanon (Beirut)
-                                    },
-                                    {
-                                        start: { lat: 33.8547, lng: 35.8623 }, // Lebanon (Beirut)
-                                        end: { lat: 26.8206, lng: 30.8025 },   // Egypt (Cairo, general)
-                                    },
-                                    {
-                                        start: { lat: 26.8206, lng: 30.8025 }, // Egypt
-                                        end: { lat: 55.7558, lng: 37.6173 },   // Russia (Moscow)
-                                    },
-                                    {
-                                        start: { lat: 55.7558, lng: 37.6173 }, // Russia
-                                        end: { lat: 13.7367, lng: 100.5232 },  // Thailand (Bangkok)
-                                    },
-                                    {
-                                        start: { lat: 31.9454, lng: 35.9284 }, // Jordan
-                                        end: { lat: 13.7367, lng: 100.5232 },  // Thailand
-                                    },
-                                ]}
-                            />
-                        </div>
-                        <motion.div className="bg-white/5 backdrop-blur-sm p-12 rounded-3xl border border-white/10 mytoppad"
+                        <motion.div className="bg-white/5 backdrop-blur-sm p-12 rounded-3xl border border-white/10"
                         initial={{ opacity: 0, y: 40 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.8, ease: "easeOut" }}

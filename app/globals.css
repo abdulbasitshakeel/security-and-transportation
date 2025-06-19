@@ -23,14 +23,24 @@ body {
 .textstylenew{
     height: 110px;
 }
+g.highcharts-legend.highcharts-no-tooltip {
+    display: none;
+}
+.highcharts-container {
+    height: 600px !important;
+    border-radius: 20px;
+}
+.myheightste{
+  height: 100% !important;
+}
 .mystylemenu {
     position: absolute;
     top: 105px;
     width: 100%;
     left: 0;
 }
-.mytoppad {
-    margin-top: 45px;
+.mybottompad {
+    margin-bottom: 55px;
 }
 .newbg{
   background-color: white;
