@@ -284,13 +284,14 @@ const HomePage = () => {
                         <div className="dark:bg-black w-full myheightste mybottompad">
                             <BasicMap />
                         </div>
-                        <motion.div className="grid md:grid-cols-5 gap-6 mb-16"
-                        initial={{ opacity: 0, y: 40 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.8, ease: "easeOut" }}
-                        viewport={{ once: true }}
-                        >
-                            {["Jordan", "Lebanon", "Egypt", "Russia", "Thailand","United Arab Emirates"].map((country, index) => (
+                        <motion.div
+                            className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-6 mb-16"
+                            initial={{ opacity: 0, y: 40 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            transition={{ duration: 0.8, ease: "easeOut" }}
+                            viewport={{ once: true }}
+                            >
+                            {["Jordan", "Lebanon", "Egypt", "Russia", "Thailand","Emirates"].map((country, index) => (
                                 <div
                                 key={country}
                                 className="group bg-white/5 backdrop-blur-sm p-8 rounded-2xl border border-white/10 hover:border-white/30 transition-all duration-300 hover:-translate-y-2"
