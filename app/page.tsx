@@ -290,7 +290,7 @@ const HomePage = () => {
                         transition={{ duration: 0.8, ease: "easeOut" }}
                         viewport={{ once: true }}
                         >
-                            {["Jordan", "Lebanon", "Egypt", "Russia", "Thailand"].map((country, index) => (
+                            {["Jordan", "Lebanon", "Egypt", "Russia", "Thailand","United Arab Emirates"].map((country, index) => (
                                 <div
                                 key={country}
                                 className="group bg-white/5 backdrop-blur-sm p-8 rounded-2xl border border-white/10 hover:border-white/30 transition-all duration-300 hover:-translate-y-2"
