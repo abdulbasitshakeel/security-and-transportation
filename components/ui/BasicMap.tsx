@@ -47,9 +47,9 @@ const BasicMap = () => {
       features: worldMap.features.filter((f: any) =>
         highlightedCountries.includes(f.properties["hc-key"])
       ),
-    } as any, // ✅ Closing this here
+    } as any,
     name: "Service Countries",
-    data: highlightedCountries.map(key => [key, 1]), // ✅ This goes here
+    data: highlightedCountries.map(key => [key, 1]),
     joinBy: "hc-key",
     states: {
       hover: {
